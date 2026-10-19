@@ -17,6 +17,7 @@ ehthumbs_vista.db
 *.tmp
 audit-*.js
 check-*.js
+temp-*.js
 
 # Metadados de deployment Vercel
 .vercel/
