@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Cinematográfico | Web & Mobile Developer</title>
+  
+  <meta name="description" content="Portfólio de Alta Engenharia Digital. Diplomado em CTeSP Programação Web, Dispositivos e Aplicações Móveis. Especialista em Android Studio, HTML/CSS/JS e SQL.">
+  <meta name="theme-color" content="#040406">
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Folhas de Estilos Cinematográficas -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. PRELOADER CINEMATOGRÁFICO DE APERTURA (BIG REVEAL ANIMATION)
+       ========================================================================= -->
+  <div id="preloader-curtain">
+    <div class="preloader-counter" id="preloader-count">00%</div>
+    <div class="preloader-label">A inicializar ecossistema digital...</div>
+    <div class="preloader-bar-line">
+      <div class="preloader-bar-fill" id="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       1. BARRA SUPERIOR DE STATUS (HEADS-UP DISPLAY / HUD)
+       ========================================================================= -->
+  <aside class="site-status-hud">
+    <div class="hud-inner-row">
+      <div class="hud-radar-status">
+        <span class="hud-radar-dot"></span>
+        <span class="hud-radar-text-full">Status: Disponível para Trabalho & Estágio // CTeSP</span>
+        <span class="hud-radar-text-mobile">Disponível // CTeSP</span>
+      </div>
+
+      <div class="hud-actions-group">
+        <span class="hud-clock-item" id="hud-live-clock">00:00:00 PT</span>
+
+        <span class="hud-kbd-legend" title="Atalhos Rápidos de Teclado">
+          <kbd>M</kbd> Som &bull; <kbd>C</kbd> CV
+        </span>
+
+        <!-- Alternador de Som Sintetizado -->
+        <button class="btn-sound-pill" id="sound-toggle-hud" title="Alternar Som Tátil da Interface (Atalho: Tecla M)">
+          <span id="sound-icon-hud">🔇</span>
+          <span id="sound-label-hud">SOM: MUTED</span>
+          <span class="sound-equalizer-bars"><span class="bar-unit"></span><span class="bar-unit"></span><span class="bar-unit"></span></span>
+        </button>
+
+        <!-- Gatilho do Spotlight Ctrl+K -->
+        <button class="btn-cmd-search-trigger" id="hud-cmd-trigger" title="Abrir Menu de Comandos (Ctrl+K)">
+          <span>PESQUISAR</span>
+          <span class="cmd-badge">CTRL+K</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. CABEÇALHO & BARRA DE NAVEGAÇÃO FLUTUANTE
+       ========================================================================= -->
+  <header class="site-header-fixed">
+    <nav class="nav-capsule-glass" aria-label="Navegação Superior">
+      <!-- ✏️ EDITA AQUI O TEU MONOGRAMA / LOGO -->
+      <a href="#inicio" class="nav-brand-group">
+        <span class="brand-icon-box">&lt;/&gt;</span>
+        <span>ARCHITECT.DEV</span>
+      </a>
+
+      <!-- Menu de Links -->
+      <ul class="nav-links-menu">
+        <li><a href="#inicio" class="nav-menu-item">Início</a></li>
+        <li><a href="#bento" class="nav-menu-item">Arquitetura & Bento</a></li>
+        <li><a href="#projetos" class="nav-menu-item">Projetos</a></li>
+        <li><a href="#sobre" class="nav-menu-item">Percurso CTeSP</a></li>
+        <li><a href="#contacto" class="nav-menu-item">Contacto</a></li>
+      </ul>
+
+      <!-- Ação Direta & Mobile Hamburger -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="#contacto" class="btn-header-cta">
+          <span>Falar Comigo</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+        <button class="mobile-menu-hamburger" id="mobile-menu-toggle" aria-label="Abrir Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Drawer de Navegação Mobile -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <ul class="drawer-links-stack">
+        <li><a href="#inicio" class="drawer-link-item">Início</a></li>
+        <li><a href="#bento" class="drawer-link-item">Arquitetura & Bento</a></li>
+        <li><a href="#projetos" class="drawer-link-item">Projetos</a></li>
+        <li><a href="#sobre" class="drawer-link-item">Percurso CTeSP</a></li>
+        <li><a href="#contacto" class="drawer-link-item">Contacto</a></li>
+      </ul>
+      <a href="#contacto" class="btn-action-solid" style="margin-top: 10px;">
+        <span>Falar Comigo ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION CINEMATOGRÁFICA (MONOCHROME LUXURY)
+       ========================================================================= -->
+  <section class="hero-stage-section" id="inicio">
+    <div class="container">
+      <div class="hero-editorial-grid">
+
+        <!-- ================= CARTÃO ESQUERDO: OBSIDIAN SHOWCASE 3D ================= -->
+        <div class="hero-profile-card-3d tilt-card">
+          <div class="specular-shine-layer"></div>
+
+          <!-- Topbar do Cartão -->
+          <div class="profile-card-topstrip">
+            <span class="profile-tech-hash">SYS_ID: ARCHITECT_2026 // CTeSP</span>
+
+            <!-- ✏️ EDITA AQUI: Teus Links das Redes Sociais -->
+            <div class="profile-social-buttons">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-circle-action" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-action" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <button class="social-circle-action btn-copy-email" data-email="oteuemail@exemplo.com" title="Copiar Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ✏️ FOTOGRAFIA EM ALTA DEFINIÇÃO DE ALTA MODA / TECH EDITORIAL -->
+          <div class="profile-photo-viewport">
+            <img src="assets/images/hero-portrait.jpg" alt="Retrato Editorial Preto e Branco" class="profile-highres-img">
+            <div class="profile-scrim-shadow"></div>
+          </div>
+
+          <!-- Informações de Apresentação no Cartão -->
+          <div class="profile-info-body">
+            <!-- Badge Flutuante de Disponibilidade -->
+            <div class="profile-avail-pill">
+              <span class="avail-silver-pulse"></span>
+              <span>Disponível para Trabalho</span>
+            </div>
+
+            <!-- ✏️ EDITA AQUI: Teu Nome e Apresentação -->
+            <h2 class="profile-title-name" data-scramble>Olá, sou o Programador</h2>
+            <p class="profile-bio-text">
+              Diplomado pelo CTeSP em Programação Web, Dispositivos e Aplicações Móveis. Crio ecossistemas digitais com código limpo, bases de dados relacionais e aplicações Android nativas.
+            </p>
+
+            <div class="profile-action-buttons">
+              <a href="#contacto" class="btn-action-solid">
+                <span>Vamos Conversar</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <button class="btn-action-ghost btn-open-cv-modal" title="Ver Currículo Académico e Técnico">
+                <span>Currículo / CV</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= COLUNA DIREITA: EDITORIAL HEADLINE & 3D PLATINUM SEAL ================= -->
+        <div class="hero-editorial-right">
+          
+          <div class="academic-badge-pill">
+            <span class="pill-dot"></span>
+            <span>CTeSP PROGRAMAÇÃO WEB, DISPOSITIVOS & APLICAÇÕES MÓVEIS</span>
+          </div>
+
+          <!-- Título Gigante com Efeito Matrix Decrypt Scramble -->
+          <h1 class="hero-mega-headline">
+            Construo <span class="headline-badge-pill" data-scramble>sistemas digitais</span> que marcam a diferença.
+          </h1>
+
+          <!-- Área com Métricas e Selo Platina 3D -->
+          <div class="hero-stats-seal-combo">
+            
+            <div class="stats-vertical-blocks">
+              <div class="stat-unit-box">
+                <div class="stat-big-val">10+</div>
+                <div class="stat-label-desc">Projetos Web & Mobile Desenvolvidos</div>
+              </div>
+              <div class="stat-unit-box">
+                <div class="stat-big-val">CTeSP</div>
+                <div class="stat-label-desc">Especialização Prática Web, Mobile & SQL</div>
+              </div>
+              <div class="stat-unit-box">
+                <div class="stat-big-val">100%</div>
+                <div class="stat-label-desc">Foco em Arquitetura Limpa & Performance</div>
+              </div>
+            </div>
+
+            <!-- Selo 3D de Platina com Rotação Orbital Contínua 360° -->
+            <div class="seal-orbital-wrapper">
+              <svg class="orbital-spinning-svg" viewBox="0 0 180 180">
+                <path id="sealPathOrbital" fill="none" d="M 90, 90 m -62, 0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" />
+                <text>
+                  <textPath href="#sealPathOrbital" startOffset="0%">
+                    • WEB ARCHITECTURE • ANDROID STUDIO • SQL RELATIONAL •
+                  </textPath>
+                </text>
+              </svg>
+
+              <!-- Prisma Central 3D em Platina -->
+              <div class="platinum-prism-core" title="Excelência Técnica CTeSP">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path d="M25,80 L25,25 C25,18 32,15 45,15 C68,15 78,25 78,40 C78,52 68,60 52,62 L78,85" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="45" cy="38" r="7" fill="#ffffff"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. KINETIC TYPOGRAPHY DUAL MARQUEE (BIG ANIMATION STREAMS)
+       ========================================================================= -->
+  <section class="kinetic-marquee-section" aria-hidden="true">
+    <!-- Stream 1 (Rumo à Esquerda) -->
+    <div class="marquee-stream-track marquee-left">
+      <span class="marquee-item-text filled">WEB ARCHITECTURE</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">ANDROID STUDIO NATIVO</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">BASES DE DADOS SQL</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">DISPOSITIVOS MÓVEIS</span>
+      <span class="marquee-separator-star">✦</span>
+      <!-- Loop -->
+      <span class="marquee-item-text filled">WEB ARCHITECTURE</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">ANDROID STUDIO NATIVO</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">BASES DE DADOS SQL</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">DISPOSITIVOS MÓVEIS</span>
+      <span class="marquee-separator-star">✦</span>
+    </div>
+
+    <!-- Stream 2 (Rumo à Direita) -->
+    <div class="marquee-stream-track marquee-right">
+      <span class="marquee-item-text outlined">CLEAN CODE & GIT</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">ARQUITETURA MVVM</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">UI/UX RESPONSIVO</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">PERFORMANCE 100%</span>
+      <span class="marquee-separator-star">✦</span>
+      <!-- Loop -->
+      <span class="marquee-item-text outlined">CLEAN CODE & GIT</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">ARQUITETURA MVVM</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text outlined">UI/UX RESPONSIVO</span>
+      <span class="marquee-separator-star">✦</span>
+      <span class="marquee-item-text filled">PERFORMANCE 100%</span>
+      <span class="marquee-separator-star">✦</span>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. BENTO GRID 2.0 (ARQUITETURA, SIMULADOR ANDROID & TERMINAL)
+       ========================================================================= -->
+  <section class="bento-section" id="bento">
+    <div class="container">
+      
+      <div class="section-editorial-header lux-reveal">
+        <span class="editorial-tag-pill">Engenharia & Competências</span>
+        <h2 class="editorial-title" data-scramble>Arquitetura Técnica em Ação</h2>
+        <p class="editorial-subtitle">
+          Uma visão transparente do código, ferramentas nativas de desenvolvimento e metodologias aplicadas na prática.
+        </p>
+      </div>
+
+      <div class="bento-cluster-layout">
+        
+        <!-- ================= CARD 1: SIMULADOR DE APP ANDROID 2.0 (SPAN 5) ================= -->
+        <div class="bento-card-unit bento-span-5 lux-reveal tilt-card">
+          <div class="specular-shine-layer"></div>
+
+          <div style="width: 100%;">
+            <span class="editorial-tag-pill">Dispositivos & Aplicações Móveis</span>
+            <h3 class="bento-unit-title">Simulador Android Studio</h3>
+            <p class="bento-unit-sub">
+              Interface tátil com persistência local SQLite, ciclo de vida de componentes Android e arquitetura em camadas MVVM.
+            </p>
+          </div>
+
+          <!-- Palco do Telemóvel com Chassi Titânio & Notificações -->
+          <div class="phone-simulator-frame">
+            <div class="phone-titanium-bezel">
+              <!-- Dynamic Island & Front Camera Lens -->
+              <div class="phone-island-cutout">
+                <div class="island-camera-lens"></div>
+                <div class="island-speaker-mesh"></div>
+              </div>
+
+              <!-- Ecrã Interativo do Android -->
+              <div class="phone-interactive-screen">
+                <!-- Barra de Status do Sistema Android -->
+                <div class="android-status-bar">
+                  <span class="status-clock" id="phone-status-clock">12:00</span>
+                  <div class="status-system-icons">
+                    <span class="status-net-tag">5G</span>
+                    <span class="status-wifi-icon">●●●</span>
+                    <span class="status-battery-pill">100% ⚡</span>
+                  </div>
+                </div>
+
+                <!-- Topbar da Aplicação Móvel -->
+                <div class="android-app-brand-row">
+                  <div class="app-brand-left">
+                    <span class="app-icon-circle">🤖</span>
+                    <div>
+                      <div class="app-brand-name">EasyTask Pro</div>
+                      <div class="app-brand-sub">SQLite Local // Room DB</div>
+                    </div>
+                  </div>
+                  <span class="app-sync-indicator">SYNC ●</span>
+                </div>
+
+                <!-- Abas da Aplicação Móvel -->
+                <div class="phone-tabs-pillbar">
+                  <button class="phone-tab-btn active" data-screen="tasks">Tarefas</button>
+                  <button class="phone-tab-btn" data-screen="stats">Métricas</button>
+                  <button class="phone-tab-btn" data-screen="arch">MVVM</button>
+                </div>
+
+                <!-- Ecrã 1: Lista Interativa de Tarefas SQLite -->
+                <div class="screen-view-panel active" data-view="tasks">
+                  <div class="tasks-counter-strip">
+                    <span id="tasks-active-label">Room DB: 2 concluídas</span>
+                    <span class="badge-sqlite-sync">PERSISTENTE</span>
+                  </div>
+
+                  <div class="phone-tasks-scroll-list" id="phone-tasks-list">
+                    <div class="phone-task-row done" data-task-id="1">
+                      <div class="task-info-block">
+                        <div class="task-title-text">Implementar DAO SQLite</div>
+                        <div class="task-sub-meta">Room Database // Query</div>
+                      </div>
+                      <div class="task-checkbox-state">✓</div>
+                    </div>
+
+                    <div class="phone-task-row done" data-task-id="2">
+                      <div class="task-info-block">
+                        <div class="task-title-text">RecyclerAdapter</div>
+                        <div class="task-sub-meta">ViewBinding // Kotlin</div>
+                      </div>
+                      <div class="task-checkbox-state">✓</div>
+                    </div>
+
+                    <div class="phone-task-row" data-task-id="3">
+                      <div class="task-info-block">
+                        <div class="task-title-text">Foreground Service</div>
+                        <div class="task-sub-meta">Notificações em Background</div>
+                      </div>
+                      <div class="task-checkbox-state"></div>
+                    </div>
+                  </div>
+
+                  <!-- Formulário Rápido para Criar Tarefa no Ecrã -->
+                  <form class="phone-quick-add-form" id="phone-add-task-form">
+                    <input type="text" id="phone-new-task-input" placeholder="+ Nova Tarefa Android..." maxlength="26" autocomplete="off">
+                    <button type="submit" title="Gravar Registo no SQLite">＋</button>
+                  </form>
+                </div>
+
+                <!-- Ecrã 2: Métricas de Performance do Dispositivo -->
+                <div class="screen-view-panel" data-view="stats">
+                  <div class="stats-overview-grid">
+                    <div class="stat-phone-card">
+                      <div class="stat-card-label">Memória Heap</div>
+                      <div class="stat-card-val" id="stat-mem-val">28.4 MB</div>
+                      <div class="stat-mini-bar"><div class="stat-mini-fill" style="width: 34%;"></div></div>
+                    </div>
+                    <div class="stat-phone-card">
+                      <div class="stat-card-label">Latência SQLite</div>
+                      <div class="stat-card-val" id="stat-latency-val">1.8 ms</div>
+                      <div class="stat-mini-bar"><div class="stat-mini-fill" style="width: 15%;"></div></div>
+                    </div>
+                  </div>
+
+                  <div class="benchmark-test-card">
+                    <div class="bench-label-row">
+                      <span>Room Benchmark (1000 INSERTs)</span>
+                      <span id="bench-status-label" style="color:#a1a1aa; font-family:monospace;">Pronto</span>
+                    </div>
+                    <div class="bench-track"><div class="bench-fill" id="bench-progress-fill"></div></div>
+                    <button type="button" class="btn-run-benchmark" id="btn-run-benchmark">▶ Executar Benchmark</button>
+                  </div>
+                </div>
+
+                <!-- Ecrã 3: Arquitetura MVVM Interativa -->
+                <div class="screen-view-panel" data-view="arch">
+                  <div class="mvvm-layers-stack">
+                    <div class="mvvm-layer-card active" data-layer="ui">
+                      <div class="layer-header">
+                        <span class="layer-tag">UI Layer</span>
+                        <span class="layer-class">MainActivity.kt</span>
+                      </div>
+                      <p class="layer-desc">Observa estado via StateFlow / LiveData e gere interações táteis.</p>
+                    </div>
+                    <div class="mvvm-connector">↓ Coroutines Flow</div>
+                    <div class="mvvm-layer-card" data-layer="vm">
+                      <div class="layer-header">
+                        <span class="layer-tag">ViewModel</span>
+                        <span class="layer-class">TaskViewModel.kt</span>
+                      </div>
+                      <p class="layer-desc">Preserva estado durante mudanças de ecrã e orientações.</p>
+                    </div>
+                    <div class="mvvm-connector">↓ Repository Pattern</div>
+                    <div class="mvvm-layer-card" data-layer="data">
+                      <div class="layer-header">
+                        <span class="layer-tag">Data Layer</span>
+                        <span class="layer-class">Room / SQLite DB</span>
+                      </div>
+                      <p class="layer-desc">Executa queries SQL em background sem bloquear a Main Thread.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Barra de Gestos Inferior Android -->
+                <div class="android-home-gesture-bar">
+                  <div class="home-gesture-pill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= CARD 2: TERMINAL DE CÓDIGO INTERATIVO (SPAN 7) ================= -->
+        <div class="bento-card-unit bento-span-7 lux-reveal tilt-card" id="terminal">
+          <div class="specular-shine-layer"></div>
+
+          <span class="editorial-tag-pill">Bases de Dados & Código Fonte</span>
+          <h3 class="bento-unit-title">Terminal & Compilador Interativo</h3>
+          <p class="bento-unit-sub">
+            Seleciona um ficheiro abaixo e clica no botão <strong>Executar Código</strong> para simular consultas SQL reais e testes de build do Android Studio.
+          </p>
+
+          <div class="code-terminal-console">
+            <div class="terminal-titlebar">
+              <div class="terminal-dots">
+                <div class="t-dot close"></div>
+                <div class="t-dot min"></div>
+                <div class="t-dot max"></div>
+              </div>
+
+              <!-- Abas de Ficheiro -->
+              <div class="terminal-tabs">
+                <button class="term-file-tab active" data-tab="sql">
+                  <span class="file-glyph">🗄️</span> queries_gestao.sql
+                </button>
+                <button class="term-file-tab" data-tab="kotlin">
+                  <span class="file-glyph">🤖</span> MainActivity.kt
+                </button>
+                <button class="term-file-tab" data-tab="js">
+                  <span class="file-glyph">⚡</span> app_reactive.js
+                </button>
+              </div>
+
+              <div class="terminal-actions-cluster">
+                <button class="btn-terminal-copy" id="terminal-copy-action" title="Copiar Código para a Área de Transferência">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copiar</span>
+                </button>
+                <button class="btn-terminal-run" id="terminal-run-action">⚡ EXECUTAR CÓDIGO</button>
+              </div>
+            </div>
+
+            <!-- Editor com Calha de Linhas -->
+            <div class="terminal-editor-container">
+              <div class="terminal-gutter" id="terminal-gutter"></div>
+              <pre class="terminal-editor-body" id="terminal-code-body"></pre>
+            </div>
+
+            <!-- Consola de Saída -->
+            <div class="terminal-output-tray" id="terminal-output-body">
+              <span style="color:#71717a;">Clica em '⚡ EXECUTAR CÓDIGO' para compilar ou executar o script...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= CARD 3: FORMAÇÃO CTESP (SPAN 4) ================= -->
+        <div class="bento-card-unit bento-span-4 lux-reveal tilt-card">
+          <div class="specular-shine-layer"></div>
+          <div class="bento-badge-stamp">🎓</div>
+          <h3 class="bento-unit-title">Formação CTeSP</h3>
+          <p class="bento-unit-sub">
+            Curso Técnico Superior Profissional em Programação Web, Dispositivos e Aplicações Móveis.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; padding:8px 12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; font-size:0.8rem;">
+              <span>Programação Web</span>
+              <strong style="color:#ffffff;">HTML, CSS, JS</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; font-size:0.8rem;">
+              <span>Aplicações Móveis</span>
+              <strong style="color:#ffffff;">Android Studio</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:8px; font-size:0.8rem;">
+              <span>Engenharia de Dados</span>
+              <strong style="color:#ffffff;">SQL & SQLite</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= CARD 4: MODULAÇÃO DE DADOS SQL DINÂMICA (SPAN 4) ================= -->
+        <div class="bento-card-unit bento-span-4 lux-reveal tilt-card">
+          <div class="specular-shine-layer"></div>
+          <div class="bento-badge-stamp">🗄️</div>
+          <h3 class="bento-unit-title">Bases de Dados & SQL</h3>
+          <p class="bento-unit-sub">
+            Modelação relacional avançada com garantia de integridade referencial e normalização até à 3FN.
+          </p>
+
+          <!-- Abas de Esquema Relacional -->
+          <div class="schema-tabs-bar">
+            <button class="schema-tab-btn active" data-schema="produtos">produtos</button>
+            <button class="schema-tab-btn" data-schema="categorias">categorias</button>
+            <button class="schema-tab-btn" data-schema="vendas">vendas</button>
+          </div>
+
+          <div class="bento-schema-mock" id="schema-table-display">
+            <div class="schema-table-header">
+              <span class="table-name-tag">TABELA: produtos (Relacional)</span>
+              <span class="table-pk-tag">PK: id_produto</span>
+            </div>
+            <div class="schema-row-item">
+              <span class="field-name">id_produto</span>
+              <span class="field-type">INT AUTO_INCREMENT (PK)</span>
+            </div>
+            <div class="schema-row-item">
+              <span class="field-name">id_categoria</span>
+              <span class="field-type">INT NOT NULL (FK)</span>
+            </div>
+            <div class="schema-row-item">
+              <span class="field-name">nome</span>
+              <span class="field-type">VARCHAR(120)</span>
+            </div>
+            <div class="schema-row-item">
+              <span class="field-name">stock_atual</span>
+              <span class="field-type">INT DEFAULT 0</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
+            <button class="btn-jump-query" id="btn-jump-to-query" title="Executar Query SQL no Terminal">
+              <span>Testar Query no Terminal ⚡</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= CARD 5: PERFORMANCE & QUALIDADE (SPAN 4) ================= -->
+        <div class="bento-card-unit bento-span-4 lux-reveal tilt-card">
+          <div class="specular-shine-layer"></div>
+          <div class="bento-badge-stamp">⚡</div>
+          <h3 class="bento-unit-title">Padrões de Qualidade</h3>
+          <p class="bento-unit-sub">
+            Interfaces fluidas, sem dependências desnecessárias e otimizadas para carregamento instantâneo.
+          </p>
+          <div style="display:flex; align-items:center; justify-content:space-around; margin-top:16px;">
+            <div style="text-align:center;">
+              <div style="font-size:2.2rem; font-weight:800; font-family:monospace; color:#ffffff;">100</div>
+              <div style="font-size:0.75rem; color:#71717a; text-transform:uppercase; letter-spacing:0.06em;">Lighthouse</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:2.2rem; font-weight:800; font-family:monospace; color:#ffffff;">0</div>
+              <div style="font-size:0.75rem; color:#71717a; text-transform:uppercase; letter-spacing:0.06em;">Dependências</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:2.2rem; font-weight:800; font-family:monospace; color:#ffffff;">60+</div>
+              <div style="font-size:0.75rem; color:#71717a; text-transform:uppercase; letter-spacing:0.06em;">FPS Fluídos</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. PROJETOS CINEMATOGRÁFICOS EM DESTAQUE (HIGH QUALITY IMAGES)
+       ========================================================================= -->
+  <section class="projects-cinematic-section" id="projetos">
+    <div class="container">
+      
+      <div class="section-editorial-header lux-reveal">
+        <span class="editorial-tag-pill">Showcase Prático</span>
+        <h2 class="editorial-title" data-scramble>Projetos em Destaque</h2>
+        <p class="editorial-subtitle">
+          Aplicações construídas de raiz demonstrando competência em desenvolvimento web, mobile e bases de dados.
+        </p>
+      </div>
+
+      <!-- Filtros de Categorias de Projetos -->
+      <div class="projects-filter-cluster lux-reveal">
+        <button class="filter-pill-btn active" data-filter="all">Todos os Projetos (4)</button>
+        <button class="filter-pill-btn" data-filter="mobile">Android Studio (2)</button>
+        <button class="filter-pill-btn" data-filter="web">Web Responsiva (1)</button>
+        <button class="filter-pill-btn" data-filter="sql">Bases de Dados & SQL (1)</button>
+      </div>
+
+      <div class="projects-cinematic-grid">
+        
+        <!-- PROJETO 1: Android Studio Native (EasyTask) -->
+        <div class="cinematic-project-card lux-reveal tilt-card" data-category="mobile">
+          <div class="specular-shine-layer"></div>
+          <div class="project-visual-viewport">
+            <span class="project-floating-category">Android Studio Native</span>
+            <img src="assets/images/project-mobile.jpg" alt="Mockup Aplicação Android" class="project-cover-image">
+          </div>
+          <div class="project-card-details">
+            <h3 class="project-detail-title">EasyTask - Gestor Móvel de Produtividade</h3>
+            <p class="project-detail-desc">
+              Aplicação móvel Android para gestão diária de tarefas com persistência offline via SQLite/Room Database, agendamento de notificações locais e interface com Material Design 3.
+            </p>
+            <div class="project-tech-pills">
+              <span class="tech-pill-tag">Android Studio</span>
+              <span class="tech-pill-tag">Kotlin / Java</span>
+              <span class="tech-pill-tag">SQLite / Room</span>
+              <span class="tech-pill-tag">MVVM</span>
+            </div>
+            <div class="project-action-row">
+              <button class="btn-project-inspect open-cinematic-modal" 
+                data-title="EasyTask - Gestor Móvel de Produtividade"
+                data-badge="Android Studio Native"
+                data-image="assets/images/project-mobile.jpg"
+                data-desc="Aplicação móvel nativa desenhada para maximizar a organização pessoal. Utiliza arquitetura MVVM, persistência de dados local offline com Room Database, notificações agendadas através do AlarmManager e interface com temas claro/escuro."
+                data-features="Persistência SQLite offline com Room Database;Notificações locais com AlarmManager e BroadcastReceiver;Interface com Material Design 3 e transições fluidas;Padrão de arquitetura MVVM com Kotlin Coroutines & Flow"
+                data-github="https://github.com"
+                data-demo="simulator"
+                data-tech="Android Studio, Kotlin, Java, Room DB, SQLite, Material Design 3">
+                <span>Ver Detalhes</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-repo">
+                <span>GitHub ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETO 2: Web Platform Responsiva (ShopFlow) -->
+        <div class="cinematic-project-card lux-reveal tilt-card" data-category="web">
+          <div class="specular-shine-layer"></div>
+          <div class="project-visual-viewport">
+            <span class="project-floating-category">Desenvolvimento Web Moderno</span>
+            <img src="assets/images/project-web.jpg" alt="Mockup Web App" class="project-cover-image">
+          </div>
+          <div class="project-card-details">
+            <h3 class="project-detail-title">ShopFlow - Catálogo Web & Carrinho Dinâmico</h3>
+            <p class="project-detail-desc">
+              Plataforma web de comércio responsiva desenvolvida com HTML5 semântico, CSS3 Grid flexível e JavaScript puro ES6+, apresentando carrinho de compras reativo e filtros instantâneos.
+            </p>
+            <div class="project-tech-pills">
+              <span class="tech-pill-tag">HTML5</span>
+              <span class="tech-pill-tag">CSS3 Grid</span>
+              <span class="tech-pill-tag">JavaScript ES6+</span>
+              <span class="tech-pill-tag">APIs REST</span>
+            </div>
+            <div class="project-action-row">
+              <button class="btn-project-inspect open-cinematic-modal"
+                data-title="ShopFlow - Catálogo Web Interativo"
+                data-badge="Desenvolvimento Web"
+                data-image="assets/images/project-web.jpg"
+                data-desc="Aplicação web de alta performance construída sem dependências pesadas. Inclui catálogo com pesquisa reativa, gestão de estado do carrinho de compras em localStorage e comunicação com APIs para sincronização de inventário."
+                data-features="Arquitetura Vanilla ES6+ com zero dependências pesadas;Carrinho de compras reativo com persistência em localStorage;Pesquisa em tempo real com debounce e filtros combinados;Layout responsivo Mobile-First com CSS Grid e Flexbox fluido"
+                data-github="https://github.com"
+                data-demo=""
+                data-tech="HTML5 Semântico, CSS3 Flexbox/Grid, JavaScript ES6+, REST APIs">
+                <span>Ver Detalhes</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-repo">
+                <span>GitHub ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETO 3: Base de Dados & SQL (GestãoPlus) -->
+        <div class="cinematic-project-card lux-reveal tilt-card" data-category="sql">
+          <div class="specular-shine-layer"></div>
+          <div class="project-visual-viewport">
+            <span class="project-floating-category">SQL & Fullstack</span>
+            <img src="assets/images/project-sql.jpg" alt="Mockup SQL Database" class="project-cover-image">
+          </div>
+          <div class="project-card-details">
+            <h3 class="project-detail-title">GestãoPlus - Sistema de Stock & SQL Relacional</h3>
+            <p class="project-detail-desc">
+              Sistema de controlo de inventário com modelo relacional normalizado, triggers de atualização de stock automática, consultas analíticas com agregação e painel web para visualização de relatórios.
+            </p>
+            <div class="project-tech-pills">
+              <span class="tech-pill-tag">SQL Relacional</span>
+              <span class="tech-pill-tag">MySQL / SQLite</span>
+              <span class="tech-pill-tag">Modelação ER</span>
+              <span class="tech-pill-tag">JavaScript</span>
+            </div>
+            <div class="project-action-row">
+              <button class="btn-project-inspect open-cinematic-modal"
+                data-title="GestãoPlus - Sistema de Stock & SQL"
+                data-badge="Bases de Dados Relacionais"
+                data-image="assets/images/project-sql.jpg"
+                data-desc="Projeto focado em engenharia de dados e modelação relacional empresarial. Inclui desenho do diagrama entidade-relacionamento, triggers automáticos para registo de auditoria e consultas avançadas com múltiplos INNER JOINs e GROUP BY."
+                data-features="Modelação relacional normalizada com integridade referencial até à 3FN;Triggers automáticos para atualização de stock e auditoria;Consultas analíticas com GROUP BY, agregações e subqueries;Exportação de relatórios tabulares com latência inferior a 10ms"
+                data-github="https://github.com"
+                data-demo="terminal"
+                data-tech="SQL, MySQL, SQLite, Data Modeling, JavaScript, HTML/CSS">
+                <span>Ver Detalhes</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-repo">
+                <span>GitHub ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETO 4: Leitor Multimédia Android (SoundWave) -->
+        <div class="cinematic-project-card lux-reveal tilt-card" data-category="mobile">
+          <div class="specular-shine-layer"></div>
+          <div class="project-visual-viewport">
+            <span class="project-floating-category">Android Studio Multimedia</span>
+            <img src="assets/images/project-audio.jpg" alt="Mockup Android Media Player" class="project-cover-image">
+          </div>
+          <div class="project-card-details">
+            <h3 class="project-detail-title">SoundWave - Leitor de Áudio em Background</h3>
+            <p class="project-detail-desc">
+              Reprodutor de música nativo para Android utilizando Foreground Service para execução contínua em segundo plano, controlos na barra de notificações com MediaSession e equalizador interativo.
+            </p>
+            <div class="project-tech-pills">
+              <span class="tech-pill-tag">Android Studio</span>
+              <span class="tech-pill-tag">Java</span>
+              <span class="tech-pill-tag">Foreground Service</span>
+              <span class="tech-pill-tag">MediaSession API</span>
+            </div>
+            <div class="project-action-row">
+              <button class="btn-project-inspect open-cinematic-modal"
+                data-title="SoundWave - Leitor de Áudio em Background"
+                data-badge="Android Multimedia"
+                data-image="assets/images/project-audio.jpg"
+                data-desc="Aplicação nativa avançada desenvolvida com serviços de sistema Android. Implementa Foreground Service com notificação persistente interativa, MediaSessionCompat para comandos do ecrã de bloqueio e gestão de permissões de armazenamento."
+                data-features="Foreground Service para reprodução ininterrupta de áudio em segundo plano;Integração MediaSessionCompat para controlos no ecrã de bloqueio;BroadcastReceivers para gestão de desconexão de auscultadores (Noisy Audio);Equalizador visual dinâmico com processamento em tempo real"
+                data-github="https://github.com"
+                data-demo=""
+                data-tech="Android Studio, Java, Foreground Service, Broadcast Receivers, XML">
+                <span>Ver Detalhes</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-repo">
+                <span>GitHub ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. SOBRE MIM & FORMAÇÃO CTESP
+       ========================================================================= -->
+  <section class="academic-curriculum-section" id="sobre">
+    <div class="container">
+      <div class="academic-vault-card lux-reveal tilt-card">
+        <div class="specular-shine-layer"></div>
+        <div class="academic-vault-grid">
+          
+          <div class="academic-vault-info">
+            <span class="editorial-tag-pill">Percurso & Rigor Técnico</span>
+            <h3 data-scramble>Formação Prática & Paixão por Software</h3>
+            <p>
+              O meu percurso académico foi construído com foco intensivo no mundo real através do <strong>CTeSP em Programação Web, Dispositivos e Aplicações Móveis</strong>. O programa preparou-me para atuar em todo o ciclo de vida do software: desde o desenho de interfaces até à persistência em base de dados e aplicações móveis nativas.
+            </p>
+            <p>
+              Acredito na simplicidade elegante: código limpo, bem documentado, facilidade de manutenção e interfaces rápidas que respeitam o utilizador.
+            </p>
+
+            <div class="ctesp-official-box">
+              <h4>
+                <span>🏛️</span>
+                <span>CTeSP em Programação Web, Dispositivos e Aplicações Móveis</span>
+              </h4>
+              <p>
+                Competências comprovadas em programação móvel com Android Studio, desenvolvimento frontend web moderno com HTML/CSS/JavaScript e administração de bases de dados relacionais SQL.
+              </p>
+            </div>
+          </div>
+
+          <!-- Barras de Competência Técnica -->
+          <div class="skill-meters-list">
+            
+            <div class="skill-meter-item">
+              <div class="meter-label-row">
+                <span>Desenvolvimento Web (HTML5, CSS3, JavaScript ES6+)</span>
+                <span style="color: #ffffff;">90%</span>
+              </div>
+              <div class="meter-track-shell">
+                <div class="meter-fill-bar" style="width: 90%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-meter-item">
+              <div class="meter-label-row">
+                <span>Android Studio & Mobile Apps (Java / Kotlin)</span>
+                <span style="color: #ffffff;">86%</span>
+              </div>
+              <div class="meter-track-shell">
+                <div class="meter-fill-bar" style="width: 86%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-meter-item">
+              <div class="meter-label-row">
+                <span>Bases de Dados & SQL (MySQL / SQLite / Room)</span>
+                <span style="color: #ffffff;">88%</span>
+              </div>
+              <div class="meter-track-shell">
+                <div class="meter-fill-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-meter-item">
+              <div class="meter-label-row">
+                <span>Design Responsivo & UI/UX (Mobile-First, Usabilidade)</span>
+                <span style="color: #ffffff;">84%</span>
+              </div>
+              <div class="meter-track-shell">
+                <div class="meter-fill-bar" style="width: 84%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-meter-item">
+              <div class="meter-label-row">
+                <span>Versionamento Git & Colaboração GitHub</span>
+                <span style="color: #ffffff;">88%</span>
+              </div>
+              <div class="meter-track-shell">
+                <div class="meter-fill-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. CONTACTO // DIRECT CONNECTION VAULT
+       ========================================================================= -->
+  <section class="contact-vault-section" id="contacto">
+    <div class="container">
+      <div class="connection-vault-container lux-reveal tilt-card">
+        <div class="specular-shine-layer"></div>
+        <div class="connection-split-layout">
+          
+          <!-- Lado Esquerdo: Links Diretos -->
+          <div class="connection-info-panel">
+            <span class="editorial-tag-pill">Conexão Direta</span>
+            <h3 data-scramble>Vamos iniciar uma colaboração?</h3>
+            <p>
+              Estou ativamente disponível para novos projetos, oportunidades de estágio e integração em equipas de tecnologia.
+            </p>
+
+            <div class="contact-channels-stack">
+              <!-- Item Email -->
+              <div class="channel-card-row">
+                <div class="channel-identity">
+                  <div class="channel-icon-cube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label-text">Email Profissional</div>
+                    <!-- ✏️ EDITA AQUI O TEU EMAIL -->
+                    <div class="channel-value-text">oteuemail@exemplo.com</div>
+                  </div>
+                </div>
+                <button class="btn-copy-vault btn-copy-email" data-email="oteuemail@exemplo.com">Copiar</button>
+              </div>
+
+              <!-- Item LinkedIn -->
+              <div class="channel-card-row">
+                <div class="channel-identity">
+                  <div class="channel-icon-cube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label-text">Rede Profissional</div>
+                    <div class="channel-value-text">linkedin.com/in/oteu-perfil</div>
+                  </div>
+                </div>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-copy-vault" style="text-decoration:none;">Abrir ↗</a>
+              </div>
+
+              <!-- Item Localização -->
+              <div class="channel-card-row">
+                <div class="channel-identity">
+                  <div class="channel-icon-cube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label-text">Localização</div>
+                    <div class="channel-value-text">Portugal (Remoto ou Híbrido)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Direito: Formulário Interativo -->
+          <form class="direct-contact-form" id="direct-contact-form">
+            <div class="form-entry-group">
+              <label for="c-name">O Teu Nome</label>
+              <input type="text" id="c-name" name="name" class="form-input-obsidian" placeholder="ex: Miguel Santos" required>
+            </div>
+
+            <div class="form-entry-group">
+              <label for="c-email">O Teu Endereço de Email</label>
+              <input type="email" id="c-email" name="email" class="form-input-obsidian" placeholder="ex: miguel@empresa.com" required>
+            </div>
+
+            <div class="form-entry-group">
+              <label for="c-message">Mensagem / Proposta</label>
+              <textarea id="c-message" name="message" class="form-input-obsidian" placeholder="Partilha os detalhes da oportunidade ou do projeto..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-dispatch">
+              <span>Enviar Mensagem</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. RODAPÉ DE LUXO
+       ========================================================================= -->
+  <footer class="site-luxury-footer">
+    <div class="container">
+      <div class="footer-split-row">
+        <div class="footer-copy-text">
+          © 2026 • Portfólio Cinematográfico • Arquitetura Monocromática Pura.
+        </div>
+        <a href="#inicio" class="btn-copy-vault" style="text-decoration:none;">Voltar ao Topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. MODAL CINEMATOGRÁFICO DE PROJETO 2.0 (FULL BLEED SHOWCASE)
+       ========================================================================= -->
+  <div class="cinematic-modal-backdrop" id="cinematic-project-modal">
+    <div class="cinematic-modal-window">
+      <div class="modal-header-strip">
+        <span class="editorial-tag-pill" id="modal-badge-target" style="margin-bottom:0;">Showcase</span>
+        <button class="btn-copy-vault" id="modal-close-action">✕ Fechar</button>
+      </div>
+
+      <!-- Banner Visual de Alta Resolução -->
+      <div class="modal-hero-cover" id="modal-cover-wrapper">
+        <img src="assets/images/project-mobile.jpg" alt="Mockup Visual do Projeto" class="modal-hero-img" id="modal-img-target">
+        <div class="modal-hero-scrim"></div>
+      </div>
+
+      <div class="modal-content-stage">
+        <h2 id="modal-title-target" style="font-size:1.85rem; font-weight:800; margin-bottom:12px; color:#ffffff;">Projeto</h2>
+        <p id="modal-desc-target" style="color:#a1a1aa; line-height:1.6; margin-bottom:24px;">Descrição detalhada...</p>
+        
+        <h4 style="font-size:0.85rem; font-family:monospace; color:#ffffff; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.08em;">Destaques Técnicos & Engenharia</h4>
+        <ul class="modal-features-list" id="modal-features-target"></ul>
+
+        <h4 style="font-size:0.85rem; font-family:monospace; color:#ffffff; margin-bottom:12px; margin-top:24px; text-transform:uppercase; letter-spacing:0.08em;">Stack & Tecnologias</h4>
+        <div id="modal-tags-target" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:30px;"></div>
+
+        <div class="modal-actions-bar" id="modal-actions-container">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-action-solid" id="modal-repo-link" style="text-decoration:none;">
+            <span>Ver no GitHub ↗</span>
+          </a>
+          <button class="btn-action-ghost" id="modal-context-action" style="display:none;">
+            <span id="modal-context-action-text">Testar no Simulador 📱</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. MODAL DE CURRÍCULO (CV) ACADÉMICO & TÉCNICO (PRINT READY A4)
+       ========================================================================= -->
+  <div class="cinematic-modal-backdrop" id="cv-preview-modal">
+    <div class="cv-preview-sheet" id="cv-printable-sheet">
+      <div class="cv-sheet-header">
+        <div>
+          <h2 class="cv-candidate-name">Programador de Software Web & Mobile</h2>
+          <div class="cv-candidate-role">CTeSP Programação Web, Dispositivos e Aplicações Móveis</div>
+        </div>
+        <div class="cv-header-actions">
+          <button class="btn-copy-vault" id="cv-print-btn">🖨️ Imprimir / Guardar PDF</button>
+          <button class="btn-copy-vault" id="cv-modal-close-btn">✕ Fechar</button>
+        </div>
+      </div>
+
+      <div class="cv-section-block">
+        <div class="cv-block-title">01. Resumo Profissional</div>
+        <p style="color: #a1a1aa; line-height: 1.6; font-size: 0.9rem;">
+          Desenvolvedor com formação técnica e prática focada em desenvolvimento web, dispositivos móveis (Android Studio / Kotlin / Java) e bases de dados relacionais SQL. Sólida capacidade de conceção de arquiteturas modulares (MVVM), persistência local offline com SQLite/Room e interfaces modernas com design responsivo.
+        </p>
+      </div>
+
+      <div class="cv-section-block">
+        <div class="cv-block-title">02. Formação Académica</div>
+        <div class="cv-timeline-item">
+          <div class="cv-item-role-line">
+            <span>CTeSP em Programação Web, Dispositivos e Aplicações Móveis</span>
+            <span style="color: #ffffff; font-family: monospace;">2024 — 2026</span>
+          </div>
+          <div class="cv-item-inst">Ensino Superior Politécnico • Portugal</div>
+          <p style="color: #a1a1aa; font-size: 0.85rem; margin-top: 6px;">
+            Unidades Curriculares Principais: Programação para Dispositivos Móveis (Android Studio, Kotlin, Java, SQLite), Programação Web Frontend (HTML5, CSS3, JavaScript ES6+), Modelação e Administração de Bases de Dados (MySQL, SQLite, Modelação ER), Algoritmia e Estruturas de Dados, Redes de Computadores e Serviços Web.
+          </p>
+        </div>
+      </div>
+
+      <div class="cv-section-block">
+        <div class="cv-block-title">03. Projetos em Destaque</div>
+        <div class="cv-projects-grid">
+          <div class="cv-project-unit">
+            <strong style="color:#ffffff;">EasyTask (Android Studio Native):</strong>
+            <span style="color:#a1a1aa; font-size:0.85rem;"> Gestão de tarefas offline com Room DB, AlarmManager e arquitetura MVVM.</span>
+          </div>
+          <div class="cv-project-unit">
+            <strong style="color:#ffffff;">ShopFlow (Desenvolvimento Web):</strong>
+            <span style="color:#a1a1aa; font-size:0.85rem;"> Catálogo responsivo e reativo construído com JavaScript puro ES6+, CSS Grid e REST APIs.</span>
+          </div>
+          <div class="cv-project-unit">
+            <strong style="color:#ffffff;">GestãoPlus (SQL & Engenharia de Dados):</strong>
+            <span style="color:#a1a1aa; font-size:0.85rem;"> Modelação relacional 3NF com triggers de auditoria, cálculo automático de stock e queries analíticas.</span>
+          </div>
+          <div class="cv-project-unit">
+            <strong style="color:#ffffff;">SoundWave (Multimédia Android):</strong>
+            <span style="color:#a1a1aa; font-size:0.85rem;"> Leitor de áudio em segundo plano com Foreground Service e integração MediaSessionCompat.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section-block">
+        <div class="cv-block-title">04. Competências Técnicas & Tecnologias</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tech-pill-tag">Android Studio</span>
+          <span class="tech-pill-tag">Kotlin</span>
+          <span class="tech-pill-tag">Java</span>
+          <span class="tech-pill-tag">SQLite / Room DB</span>
+          <span class="tech-pill-tag">HTML5 Semântico</span>
+          <span class="tech-pill-tag">CSS3 Grid & Flexbox</span>
+          <span class="tech-pill-tag">JavaScript ES6+</span>
+          <span class="tech-pill-tag">SQL & MySQL</span>
+          <span class="tech-pill-tag">APIs REST & JSON</span>
+          <span class="tech-pill-tag">Git Flow & GitHub</span>
+          <span class="tech-pill-tag">Arquitetura MVVM</span>
+          <span class="tech-pill-tag">UI/UX Responsivo</span>
+        </div>
+      </div>
+
+      <div class="cv-section-block">
+        <div class="cv-block-title">05. Contacto Direto & Disponibilidade</div>
+        <p style="color: #a1a1aa; font-size: 0.875rem;">
+          Email: <span style="color:#ffffff;">oteuemail@exemplo.com</span> • LinkedIn: <span style="color:#ffffff;">linkedin.com/in/oteu-perfil</span> • Localização: Portugal (Disponível para Trabalho / Estágio)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       12. MODAL COMMAND PALETTE SPOTLIGHT (CTRL+K)
+       ========================================================================= -->
+  <div class="command-palette-backdrop" id="command-palette-backdrop">
+    <div class="command-palette-card">
+      <div class="command-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="command-search-icon">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="command-search-input" id="cmd-input-field" placeholder="O que procuras? (ex: 'sql', 'mobile', 'cv', 'contacto')..." autocomplete="off">
+        <span class="command-shortcut-hint">ESC</span>
+      </div>
+      <div class="command-results-list" id="cmd-results-list"></div>
+      <div class="command-palette-footer">
+        <span>Usa <kbd>↑</kbd> <kbd>↓</kbd> para navegar</span>
+        <span><kbd>ENTER</kbd> para selecionar</span>
+        <span><kbd>ESC</kbd> para fechar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notificação Luxo -->
+  <div id="luxury-toast-msg" class="luxury-toast-capsule" aria-live="polite"></div>
+
+  <!-- Botão Flutuante de Scroll Progress Ring -->
+  <button class="scroll-progress-btn" id="scroll-progress-btn" title="Voltar ao Topo">
+    <svg class="progress-ring-svg" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.12)" stroke-width="2.5" fill="none"/>
+      <circle id="progress-ring-circle" class="progress-ring-circle" cx="24" cy="24" r="22" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+    </svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts Interativos Cinematográficos -->
+  <script src="js/main.js"></script>
+</body>
+</html>

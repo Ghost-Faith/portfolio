@@ -1,0 +1,350 @@
+/* ==========================================================================
+   ANIMATIONS & MOTION SYSTEM // CINEMATIC 60-120FPS
+   Keyframes, Magnetic Cursor, Kinetic Stream & Command Spotlight
+   ========================================================================== */
+
+/* 1. Rotação Contínua Orbital do Selo 3D de Platina */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Pulso Radar do Status HUD */
+@keyframes radarPulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  60% { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* 3. Kinetic Marquee Streams Opostos */
+@keyframes streamLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes streamRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* 4. Fade In Suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Cursor Magnético Fluido de Dupla Camada */
+.luxury-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate3d(-100px, -100px, 0);
+  transition: transform 0.04s linear;
+}
+
+.luxury-cursor-ring {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate3d(-100px, -100px, 0);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(2px);
+}
+
+.luxury-cursor-ring.cursor-active {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.5);
+}
+
+.luxury-cursor-ring.cursor-click {
+  transform: scale(0.8) !important;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 6. Tilt 3D com Specular Shine */
+.tilt-card {
+  transform: perspective(1000px) rotateX(var(--tilt-rx, 0deg)) rotateY(var(--tilt-ry, 0deg));
+  transition: transform 0.15s ease-out;
+  position: relative;
+}
+
+.specular-shine-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.03) 30%,
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.tilt-card:hover .specular-shine-layer,
+.bento-card-unit:hover .specular-shine-layer,
+.cinematic-project-card:hover .specular-shine-layer {
+  opacity: 1;
+}
+
+/* 7. Revelação Suave no Scroll */
+.lux-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.lux-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 8. Command Menu / Spotlight Palette (Raycast / Linear Style) */
+.command-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 14vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.command-palette-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.command-palette-card {
+  width: 100%;
+  max-width: 620px;
+  background: #101014;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95);
+  transform: scale(0.96) translateY(-10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.command-palette-backdrop.open .command-palette-card {
+  transform: scale(1) translateY(0);
+}
+
+.command-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.command-search-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--titanium-muted);
+}
+
+.command-search-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.05rem;
+  outline: none;
+}
+
+.command-shortcut-hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--titanium-silver);
+}
+
+.command-results-list {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 10px 12px;
+}
+
+.command-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.command-item-row:hover,
+.command-item-row.selected {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.command-item-title {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.command-item-desc {
+  font-size: 0.775rem;
+  color: var(--titanium-silver);
+  margin-top: 2px;
+}
+
+.command-item-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--titanium-muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.command-palette-footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 24px;
+  background: #09090b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.725rem;
+  color: var(--titanium-muted);
+  font-family: var(--font-mono);
+}
+
+.command-palette-footer kbd {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--platinum-silver);
+}
+
+/* 9. Toast de Notificação de Luxo */
+.luxury-toast-capsule {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: rgba(18, 18, 22, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  padding: 12px 24px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 255, 255, 0.08);
+  z-index: 100001;
+  transform: translateY(80px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-toast-capsule.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 10. Shimmer Glow de Platina para Benchmark & Badges Ativos */
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.bench-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerGlow 2.4s linear infinite;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.badge-sqlite-sync,
+.badge-active,
+.active-badge,
+.badge.active,
+.headline-badge-pill {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.26) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerGlow 3s ease-in-out infinite;
+}
+
+.filter-pill-btn.active {
+  background-image: linear-gradient(
+    90deg,
+    #d4d4d8 0%,
+    #ffffff 50%,
+    #d4d4d8 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerGlow 3.5s ease-in-out infinite;
+  color: #000000;
+}
+
+/* 11. Pulso Óptico Suave da Lente Frontal / Dynamic Island */
+@keyframes lensBreathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), inset 0 0 1px rgba(255, 255, 255, 0.2);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 8px 1px rgba(130, 160, 255, 0.35), inset 0 0 2px rgba(255, 255, 255, 0.5);
+    filter: brightness(1.25);
+  }
+}
+
+.island-camera-lens {
+  animation: lensBreathe 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* 12. Indicador de Foco Acessível de Alto Padrão (Focus-Visible) */
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+}
+

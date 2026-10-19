@@ -1,0 +1,22 @@
+# Sistema Operativo / Ficheiros temporários
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+.DS_Store
+*.stackdump
+
+# Ambientes de Desenvolvimento e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs e scripts de auditoria
+*.log
+*.tmp
+audit-*.js
+check-*.js
+
+# Metadados de deployment Vercel
+.vercel/

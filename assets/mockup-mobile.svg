@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121319"/>
+      <stop offset="100%" stop-color="#0a0a0e"/>
+    </linearGradient>
+    <linearGradient id="cardG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22232e"/>
+      <stop offset="100%" stop-color="#161720"/>
+    </linearGradient>
+    <linearGradient id="greenG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e599"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="purpleG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <filter id="glowPhone" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="25" flood-color="#00e599" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="420" fill="url(#bgM)" rx="16"/>
+  
+  <!-- Subtle background grid -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="70" x2="600" y2="70"/>
+    <line x1="0" y1="140" x2="600" y2="140"/>
+    <line x1="0" y1="210" x2="600" y2="210"/>
+    <line x1="0" y1="280" x2="600" y2="280"/>
+    <line x1="0" y1="350" x2="600" y2="350"/>
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="200" y1="0" x2="200" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="420"/>
+    <line x1="500" y1="0" x2="500" y2="420"/>
+  </g>
+
+  <!-- Left: Stylized Android Device Mockup -->
+  <g transform="translate(195, 25)" filter="url(#glowPhone)">
+    <!-- Phone Body Outer Frame -->
+    <rect x="0" y="0" width="210" height="370" rx="36" fill="#08080a" stroke="#2a2c3a" stroke-width="4"/>
+    <!-- Screen Bezel -->
+    <rect x="8" y="8" width="194" height="354" rx="28" fill="#111217"/>
+    
+    <!-- Dynamic Island / Camera Punch Hole -->
+    <rect x="75" y="16" width="60" height="12" rx="6" fill="#000000"/>
+    <circle cx="120" cy="22" r="3" fill="#1e2230"/>
+    
+    <!-- App UI Header -->
+    <text x="24" y="52" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="14">Minhas Tarefas</text>
+    <circle cx="180" cy="48" r="10" fill="#20222e"/>
+    <text x="180" y="52" fill="#00e599" font-family="system-ui, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">+</text>
+
+    <!-- App Task Progress Card -->
+    <rect x="20" y="68" width="170" height="64" rx="14" fill="url(#greenG)" opacity="0.9"/>
+    <text x="32" y="90" fill="#063223" font-family="system-ui, sans-serif" font-weight="700" font-size="12">Produtividade Semanal</text>
+    <text x="32" y="106" fill="#063223" font-family="system-ui, sans-serif" font-size="10">84% concluído hoje</text>
+    <rect x="32" y="116" width="146" height="5" rx="2.5" fill="#063223" opacity="0.3"/>
+    <rect x="32" y="116" width="115" height="5" rx="2.5" fill="#ffffff"/>
+
+    <!-- App Task List Items -->
+    <rect x="20" y="142" width="170" height="46" rx="12" fill="url(#cardG)" stroke="#2b2d3d" stroke-width="1"/>
+    <circle cx="36" cy="165" r="7" fill="none" stroke="#00e599" stroke-width="2"/>
+    <polyline points="32,165 35,168 40,162" fill="none" stroke="#00e599" stroke-width="1.8"/>
+    <text x="50" y="163" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Reunião CTeSP</text>
+    <text x="50" y="176" fill="#8d90a5" font-family="system-ui, sans-serif" font-size="9">Hoje • 10:30</text>
+
+    <rect x="20" y="196" width="170" height="46" rx="12" fill="url(#cardG)" stroke="#2b2d3d" stroke-width="1"/>
+    <circle cx="36" cy="219" r="7" fill="none" stroke="#00e599" stroke-width="2"/>
+    <polyline points="32,219 35,222 40,216" fill="none" stroke="#00e599" stroke-width="1.8"/>
+    <text x="50" y="217" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Finalizar Room DB</text>
+    <text x="50" y="230" fill="#8d90a5" font-family="system-ui, sans-serif" font-size="9">SQLite Integrado</text>
+
+    <rect x="20" y="250" width="170" height="46" rx="12" fill="url(#cardG)" stroke="#2b2d3d" stroke-width="1"/>
+    <circle cx="36" cy="273" r="7" fill="none" stroke="#525468" stroke-width="2"/>
+    <text x="50" y="271" fill="#c3c6db" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Testes Unitários Android</text>
+    <text x="50" y="284" fill="#8d90a5" font-family="system-ui, sans-serif" font-size="9">Amanhã • Prioridade Alta</text>
+
+    <!-- Bottom Nav bar -->
+    <rect x="20" y="315" width="170" height="34" rx="17" fill="#1b1c26"/>
+    <circle cx="50" cy="332" r="4" fill="#00e599"/>
+    <circle cx="105" cy="332" r="4" fill="#6a6d85"/>
+    <circle cx="160" cy="332" r="4" fill="#6a6d85"/>
+  </g>
+
+  <!-- Floating Tech Badges -->
+  <g transform="translate(35, 70)">
+    <rect width="130" height="36" rx="18" fill="#171822" stroke="#2f3247" stroke-width="1"/>
+    <circle cx="20" cy="18" r="6" fill="#3ddc84"/>
+    <text x="34" y="22" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Android Studio</text>
+  </g>
+
+  <g transform="translate(425, 140)">
+    <rect width="140" height="36" rx="18" fill="#171822" stroke="#2f3247" stroke-width="1"/>
+    <circle cx="20" cy="18" r="6" fill="#00e599"/>
+    <text x="34" y="22" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">SQLite / Room DB</text>
+  </g>
+
+  <g transform="translate(435, 270)">
+    <rect width="125" height="36" rx="18" fill="#171822" stroke="#2f3247" stroke-width="1"/>
+    <circle cx="20" cy="18" r="6" fill="#f59e0b"/>
+    <text x="34" y="22" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Java & Kotlin</text>
+  </g>
+</svg>

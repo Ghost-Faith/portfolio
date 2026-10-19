@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgMu" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14111a"/>
+      <stop offset="100%" stop-color="#0a0810"/>
+    </linearGradient>
+    <linearGradient id="gradAlbum" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glowMusic" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="25" flood-color="#8b5cf6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="420" fill="url(#bgMu)" rx="16"/>
+
+  <g transform="translate(195, 25)" filter="url(#glowMusic)">
+    <rect x="0" y="0" width="210" height="370" rx="36" fill="#09080d" stroke="#2c2538" stroke-width="4"/>
+    <rect x="8" y="8" width="194" height="354" rx="28" fill="#110e17"/>
+    
+    <!-- Punch hole -->
+    <rect x="75" y="16" width="60" height="12" rx="6" fill="#000000"/>
+    <circle cx="120" cy="22" r="3" fill="#201a28"/>
+
+    <!-- App Top Bar -->
+    <text x="24" y="52" fill="#8b8599" font-family="system-ui, sans-serif" font-size="11">A Tocar do Álbum</text>
+    <text x="24" y="66" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="13">Synthwave Nights</text>
+
+    <!-- Album Art Cover -->
+    <rect x="24" y="80" width="162" height="150" rx="14" fill="url(#gradAlbum)"/>
+    <circle cx="105" cy="155" r="36" fill="#ffffff" opacity="0.15"/>
+    <circle cx="105" cy="155" r="14" fill="#110e17"/>
+
+    <!-- Song Info -->
+    <text x="24" y="255" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="13">Midnight City Lights</text>
+    <text x="24" y="270" fill="#a49eb3" font-family="system-ui, sans-serif" font-size="10">Cyber Echo • 2026</text>
+
+    <!-- Progress Bar -->
+    <rect x="24" y="285" width="162" height="4" rx="2" fill="#262233"/>
+    <rect x="24" y="285" width="98" height="4" rx="2" fill="#8b5cf6"/>
+    <circle cx="122" cy="287" r="4" fill="#ffffff"/>
+    <text x="24" y="302" fill="#716b80" font-family="system-ui, sans-serif" font-size="8">02:14</text>
+    <text x="186" y="302" fill="#716b80" font-family="system-ui, sans-serif" font-size="8" text-anchor="end">03:45</text>
+
+    <!-- Media Controls -->
+    <circle cx="105" cy="330" r="18" fill="#8b5cf6"/>
+    <polygon points="101,322 101,338 113,330" fill="#ffffff"/>
+    <circle cx="58" cy="330" r="12" fill="#1f1b29"/>
+    <polygon points="62,326 54,330 62,334" fill="#ffffff"/>
+    <circle cx="152" cy="330" r="12" fill="#1f1b29"/>
+    <polygon points="148,326 156,330 148,334" fill="#ffffff"/>
+  </g>
+
+  <!-- Tags -->
+  <g transform="translate(35, 120)">
+    <rect width="135" height="34" rx="17" fill="#181422" stroke="#312842" stroke-width="1"/>
+    <circle cx="18" cy="17" r="5" fill="#a855f7"/>
+    <text x="32" y="21" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">MediaSession API</text>
+  </g>
+  <g transform="translate(425, 200)">
+    <rect width="140" height="34" rx="17" fill="#181422" stroke="#312842" stroke-width="1"/>
+    <circle cx="18" cy="17" r="5" fill="#ec4899"/>
+    <text x="32" y="21" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Foreground Service</text>
+  </g>
+</svg>

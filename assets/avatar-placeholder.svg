@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141418"/>
+      <stop offset="50%" stop-color="#0c0c0e"/>
+      <stop offset="100%" stop-color="#060608"/>
+    </linearGradient>
+    <linearGradient id="rimLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E599" stop-opacity="0.3"/>
+      <stop offset="40%" stop-color="#00E599" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="glowGlow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#00e599" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#282830"/>
+      <stop offset="100%" stop-color="#121216"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a3842"/>
+      <stop offset="50%" stop-color="#2a2832"/>
+      <stop offset="100%" stop-color="#191820"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e599" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  <circle cx="250" cy="220" r="240" fill="url(#glowGlow)"/>
+
+  <!-- Geometric aura grid -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <circle cx="250" cy="240" r="140" fill="none" stroke-dasharray="4 6"/>
+    <circle cx="250" cy="240" r="180" fill="none"/>
+    <circle cx="250" cy="240" r="220" fill="none" stroke-dasharray="8 8"/>
+  </g>
+
+  <!-- Developer Silhouette / Illustration -->
+  <g transform="translate(0, 40)">
+    <!-- Shoulders / Jacket -->
+    <path d="M70,550 C90,460 150,410 250,410 C350,410 410,460 430,550 L450,650 L50,650 Z" fill="#15151a"/>
+    <path d="M120,530 C150,450 190,420 250,420 C310,420 350,450 380,530 L400,650 L100,650 Z" fill="#1c1c24"/>
+    
+    <!-- Collar / Hoodie V-neck -->
+    <path d="M210,420 L250,480 L290,420 Z" fill="#0d0d10"/>
+    
+    <!-- Neck -->
+    <path d="M220,330 L220,430 C235,440 265,440 280,430 L280,330 Z" fill="url(#skinGrad)"/>
+
+    <!-- Head / Jaw -->
+    <path d="M190,230 C190,320 220,360 250,360 C280,360 310,320 310,230 C310,160 280,150 250,150 C220,150 190,160 190,230 Z" fill="url(#skinGrad)"/>
+    
+    <!-- Stylish Hair volume -->
+    <path d="M175,190 C165,130 200,90 250,90 C300,90 335,130 325,190 C315,140 290,120 250,120 C210,120 185,140 175,190 Z" fill="url(#hairGrad)"/>
+    
+    <!-- Modern Tech Glasses / Visor (sleek reflections) -->
+    <rect x="195" y="210" width="48" height="26" rx="8" fill="#0d0d12" stroke="#2c2d38" stroke-width="2"/>
+    <rect x="257" y="210" width="48" height="26" rx="8" fill="#0d0d12" stroke="#2c2d38" stroke-width="2"/>
+    <line x1="243" y1="222" x2="257" y2="222" stroke="#3b3d4f" stroke-width="3"/>
+    
+    <!-- Sunglasses high-tech reflection -->
+    <path d="M198,214 L235,214 L220,232 L198,232 Z" fill="url(#glassGrad)" opacity="0.8"/>
+    <path d="M260,214 L297,214 L282,232 L260,232 Z" fill="url(#glassGrad)" opacity="0.8"/>
+
+    <!-- Subtle rim light highlights -->
+    <path d="M190,210 C185,270 215,355 250,358" fill="none" stroke="#00e599" stroke-width="2.5" opacity="0.6"/>
+    <path d="M310,210 C315,270 285,355 250,358" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- Ambient light overlay -->
+  <rect width="100%" height="100%" fill="url(#rimLight)" mix-blend-mode="screen"/>
+
+  <!-- Code watermark at bottom -->
+  <text x="250" y="615" text-anchor="middle" fill="#444654" font-family="monospace" font-size="12" letter-spacing="3">&lt;DEVELOPER_PROFILE /&gt;</text>
+</svg>
